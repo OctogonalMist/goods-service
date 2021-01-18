@@ -2,22 +2,23 @@ package com.example.goods.entity;
 
 import org.springframework.lang.NonNull;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "goods")
 public class Goods {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @NonNull
+    @Column(name = "item_name")
     private String itemName;
 
+    @Column(name = "price")
     private double price;
 
+    @Column(name = "quantity")
     private int quantity;
 
     public Goods() {
